@@ -33,6 +33,8 @@ if os.path.exists(model_path):
             rf_model_prediction = rf_model.predict(input_data)
             outcome_names = {0: 'Tidak Diabetes', 1: ' Diabetes'}
             st.write(f"Orang tersebut diprediksi **{outcome_names[rf_model_prediction[0]]}** olef RF")
+            except Exception as e:
+        st.error("Terjadi kesalahan: {e}")
 
 else:
     print("File 'rd_diabestes_model.pkl tidak ditemukan di direktori")
